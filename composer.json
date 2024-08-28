@@ -1,0 +1,54 @@
+{
+    "name": "ornikar/attribute-binding",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ornikar\\AttributeBinding\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Karim Bouheraoua",
+            "email": "karim.bouheraoua@ornikar.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.63",
+        "orchestra/testbench": "^9.2",
+        "phpstan/phpstan": "^1.12"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ornikar\\AttributeBinding\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "phpstan": "vendor/bin/phpstan",
+        "phpcs.check": "vendor/bin/php-cs-fixer check",
+        "phpcs.diff": "vendor/bin/php-cs-fixer check --diff",
+        "phpcs.fix": "vendor/bin/php-cs-fixer fix",
+        "phpunit": "vendor/bin/phpunit",
+        "check.all": [
+            "@phpcs.check",
+            "@phpstan",
+            "@phpunit"
+        ]
+    }
+}
